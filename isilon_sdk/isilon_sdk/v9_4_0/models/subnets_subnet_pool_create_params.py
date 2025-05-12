@@ -447,8 +447,8 @@ class SubnetsSubnetPoolCreateParams(object):
             raise ValueError("Invalid value for `sc_dns_zone`, length must be less than or equal to `2048`")  # noqa: E501
         if sc_dns_zone is not None and len(sc_dns_zone) < 0:
             raise ValueError("Invalid value for `sc_dns_zone`, length must be greater than or equal to `0`")  # noqa: E501
-        if sc_dns_zone is not None and not re.search(r'^$|^[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]*)*$', sc_dns_zone):  # noqa: E501
-            raise ValueError(r"Invalid value for `sc_dns_zone`, must be a follow pattern or equal to `/^$|^[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]*)*$/`")  # noqa: E501
+        if sc_dns_zone is not None and not re.search(r'^$|^[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]*)*$', sc_dns_zone):  # noqa: E501
+            raise ValueError(r"Invalid value for `sc_dns_zone`, must be a follow pattern or equal to `/^$|^[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]*)*$/`")  # noqa: E501
 
         self._sc_dns_zone = sc_dns_zone
 

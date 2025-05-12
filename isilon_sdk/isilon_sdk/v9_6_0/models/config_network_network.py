@@ -81,8 +81,8 @@ class ConfigNetworkNetwork(object):
             raise ValueError("Invalid value for `gateway`, length must be less than or equal to `45`")  # noqa: E501
         if gateway is not None and len(gateway) < 2:
             raise ValueError("Invalid value for `gateway`, length must be greater than or equal to `2`")  # noqa: E501
-        if gateway is not None and not re.search(r'^([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])(\\.([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])){3}$', gateway):  # noqa: E501
-            raise ValueError(r"Invalid value for `gateway`, must be a follow pattern or equal to `/^([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])(\\.([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])){3}$/`")  # noqa: E501
+        if gateway is not None and not re.search(r'^([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])(\.([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])){3}$', gateway):  # noqa: E501
+            raise ValueError(r"Invalid value for `gateway`, must be a follow pattern or equal to `/^([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])(\.([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])){3}$/`")  # noqa: E501
 
         self._gateway = gateway
 

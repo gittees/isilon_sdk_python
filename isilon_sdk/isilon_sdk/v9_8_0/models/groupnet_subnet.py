@@ -331,8 +331,8 @@ class GroupnetSubnet(object):
             raise ValueError("Invalid value for `sc_service_name`, length must be less than or equal to `2048`")  # noqa: E501
         if sc_service_name is not None and len(sc_service_name) < 0:
             raise ValueError("Invalid value for `sc_service_name`, length must be greater than or equal to `0`")  # noqa: E501
-        if sc_service_name is not None and not re.search(r'^$|^[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]*)*$', sc_service_name):  # noqa: E501
-            raise ValueError(r"Invalid value for `sc_service_name`, must be a follow pattern or equal to `/^$|^[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]*)*$/`")  # noqa: E501
+        if sc_service_name is not None and not re.search(r'^$|^[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]*)*$', sc_service_name):  # noqa: E501
+            raise ValueError(r"Invalid value for `sc_service_name`, must be a follow pattern or equal to `/^$|^[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]*)*$/`")  # noqa: E501
 
         self._sc_service_name = sc_service_name
 
